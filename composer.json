@@ -1,0 +1,21 @@
+{
+  "name": "larabook/saderat",
+  "homepage": "https://github.com/larabook/saderat",
+  "description": "A laravel package for connecting to bank saderat gateway",
+  "keywords": ["laravel","iran","payment", "gateway", "port", "bank", "pay", "saderat", "bsi", "mabna", "iranian-banks", "persian-banks", "pardakht","dargah","shaparak"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hamed Pakdaman",
+      "email": "pakdaman.it@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Larabookir\\Saderat\\": "./"
+    }
+  },
+  "minimum-stability": "dev"
+}
