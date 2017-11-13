@@ -57,7 +57,6 @@ you can call the gateway by these ways :
  2.By app helper :  app('saderat')->make(1000); 
  3.Using Dependency Injection all over the controller and routers ...
  
-
 and in your callback :
 
     try {
