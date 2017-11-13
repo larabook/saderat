@@ -29,7 +29,7 @@ STEP 2 : Add `provider` and `facade` in config/app.php
 
 Step 3:  
     php artisan vendor:publish --provider="Larabookir\Saderat\SaderatServiceProvider"
-or
+    -- Or --
     php artisan vendor:publish --provider=Larabookir\Saderat\SaderatServiceProvider
 
  
