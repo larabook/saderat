@@ -59,6 +59,7 @@ you can call the gateway by these ways :
  
 
 and in your callback :
+
     try {
         $data = app('saderat')->verify();
         // تراکنش با موفقیت سمت بانک تایید گردید
