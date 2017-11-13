@@ -24,7 +24,7 @@ STEP 2 : Add `provider` and `facade` in config/app.php
 
     'aliases' => [
       ...
-      'Gateway' => Larabookir\Saderat\Saderat::class, // <-- add this line at the end of aliases array
+      'Saderat' => Larabookir\Saderat\Facade\Saderat::class, // <-- add this line at the end of aliases array
     ]
 
 Step 3:  
