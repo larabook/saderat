@@ -3,7 +3,7 @@
 /**
  * @Author     Hamed Pakdaman - pakdaman.it@gmail.com
  * @website    larabook.ir
- * @link       http://pear.php.net/package/PackageName
+ * @link       https://github.com/larabook/gateway/
  * @version    1.00
  */
 
