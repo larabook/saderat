@@ -1,5 +1,5 @@
 # saderat
-A laravel package for connecting to bank saderat gateway 
+A laravel package for connecting to saderat bank gateway (BSI)
 
 Please inform us once you've encountered [bug](https://github.com/larabook/gateway/issues) or [isue](https://github.com/larabook/gateway/issues)  .
   
