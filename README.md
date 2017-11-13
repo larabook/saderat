@@ -54,6 +54,7 @@ You can make connection to bank by several way (Facade , Service container):
     }
 
 you can call the gateway by these ways :
+ 
  1.By Facade :  Saderat::make(1000)
  
  2.By app helper :  app('saderat')->make(1000); 
