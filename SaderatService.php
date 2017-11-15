@@ -73,7 +73,8 @@ class SaderatService
 
     function __construct()
     {
-        include_once(__DIR__ . '/Assets/nusoap.php');
+        // dipricated since we use econea/nusoap
+        //include_once(__DIR__ . '/Assets/nusoap.php');
 
 
         $this->merchant_id = config('saderat.merchant_id');
@@ -371,6 +372,8 @@ class SaderatService
             while ($attempt <= $this->max_request_attempts) {
                 try {
                     $client = new \nusoap_client($serverURL, 'wsdl');
+                    $client->soap_defencoding = 'UTF-8';
+                    $client->decode_utf8 = FALSE;
                     if ($client->getError())
                         throw new \Exception('خطای ارتباط با بانک');
                     $result = $client->call($method, $parameters);
