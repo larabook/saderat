@@ -38,7 +38,7 @@ or:
 
 Configuration file is placed in config/saderat.php right now , open it and enter your banks credential there.
 
-The bellow siniped code sends request to the bank and get token then redirects user to the bank interface:
+The bellow siniped code sends request to the bank and gets token then redirects user to the bank interface:
 
     try {
 
