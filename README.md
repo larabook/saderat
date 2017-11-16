@@ -61,8 +61,7 @@ and in your callback :
     try {
         $data = app('saderat')->verify();
         // تراکنش با موفقیت سمت بانک تایید گردید
-        // در این مرحله پس از بررسی موجود بودن شماره invoice در بانک اطلاعاتی
-        // عملیات خرید کاربر را تکمیل میکنیم
+        // در این مرحله عملیات خرید کاربر را تکمیل میکنیم
         
         echo "شماره صورت حساب : " . $data->invoice_number . "<br>";
         echo "شماره مرجع بانک : " . $data->bank_receipt . "<br>";
@@ -70,7 +69,8 @@ and in your callback :
     } catch (\Larabookir\Saderat\Exceptions\RepetitiveException $e) {
         // تراکنش قبلا سمت بانک تاییده شده است و
         // کاربر احتمالا صفحه را مجددا رفرش کرده است
-        // لذا تنها فاکتور خرید موفق را مجدد به کاربر نمایش میدهیم
+        // لذا تنها فاکتور خرید قبل را مجدد به کاربر نمایش میدهیم
+
         echo $e->getMessage() . "<br>";
         echo "شماره صورت حساب : " . $e->invoice_number . "<br>";
         echo "شماره مرجع بانک : " . $e->bank_receipt . "<br>";
