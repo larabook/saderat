@@ -40,17 +40,19 @@ Configuration file is placed in config/saderat.php , open it and enter your bank
 You can make connection to bank by several way (Facade , Service container):
 
     try {
-       
-       $bank = app('saderat')->make(1000);  // ۱۰۰ تومان
-       $bank->setCallback(url('/path/to/calback/route')); You can also change the callback  
 
-        // ذخیره شماره invoice قبل از ارجاع کاربر به بانک
-        $invoiceNumber = $bank->getInvoiceNumber();
-        return $bank->go();
+      $bank = app('saderat')->make(1000);  // ۱۰۰ تومان
+      $bank->setCallback(url('/path/to/calback/route')); You can also change the callback  
+
+      // در این مرحله شماره invoice را قبل از ارجاع کاربر به بانک
+      // در بانک اطلاعات ذخیره میکنیم
+
+      $invoiceNumber = $bank->getInvoiceNumber();
+      return $bank->go();
        
     } catch (Exception $e) {
-       
-       	echo $e->getMessage();
+
+      echo $e->getMessage();
     }
  
  
@@ -59,11 +61,13 @@ and in your callback :
     try {
         $data = app('saderat')->verify();
         // تراکنش با موفقیت سمت بانک تایید گردید
-        // در این مرحله عملیات خرید کاربر را تکمیل میکنیم
+        // در این مرحله پس از بررسی موجود بودن شماره invoice در بانک اطلاعاتی
+        // عملیات خرید کاربر را تکمیل میکنیم
+        
         echo "شماره صورت حساب : " . $data->invoice_number . "<br>";
         echo "شماره مرجع بانک : " . $data->bank_receipt . "<br>";
 
-    } catch (\App\Bank\Exceptions\RepetitiveException $e) {
+    } catch (\Larabookir\Saderat\Exceptions\RepetitiveException $e) {
         // تراکنش قبلا سمت بانک تاییده شده است و
         // کاربر احتمالا صفحه را مجددا رفرش کرده است
         // لذا تنها فاکتور خرید موفق را مجدد به کاربر نمایش میدهیم
@@ -71,7 +75,7 @@ and in your callback :
         echo "شماره صورت حساب : " . $e->invoice_number . "<br>";
         echo "شماره مرجع بانک : " . $e->bank_receipt . "<br>";
 
-    } catch (\App\Bank\Exceptions\BankException $e) {
+    } catch (\Larabookir\Saderat\Exceptions\BankException $e) {
         // نمایش خطای بانک
         echo $e->getMessage();
     }
