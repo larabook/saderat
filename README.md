@@ -8,7 +8,7 @@ Please inform us once you've encountered [bug](https://github.com/larabook/gatew
 
 **Installation**:
 
-Run below statements on your terminal :
+Run below statements in your terminal :
 
 STEP 1 : 
 
@@ -35,9 +35,11 @@ or:
  
 
 
-Configuration file is placed in config/saderat.php , open it and enter your banks credential:
 
-You can make connection to bank by several way (Facade , Service container):
+Configuration file is placed in config/saderat.php right now , open it and enter your banks credential there.
+
+
+You can make connection to bank by several ways (Facade , Service container):
 
     try {
 
