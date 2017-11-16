@@ -44,7 +44,7 @@ You can make connection to bank by several way (Facade , Service container):
       $bank = app('saderat')->make(1000);  // ۱۰۰ تومان
       $bank->setCallback(url('/path/to/calback/route')); You can also change the callback  
 
-      // در این مرحله شماره invoice را قبل از ارجاع کاربر به بانک
+      // در این مرحله شماره سند تولید شده را قبل از ارجاع کاربر به بانک
       // در بانک اطلاعات ذخیره میکنیم
 
       $invoiceNumber = $bank->getInvoiceNumber();
