@@ -35,7 +35,7 @@ class SaderatService
 
 
     /**
-     * رسید تراکنش بان پس از عملیات موفق سفارش
+     * رسید تراکنش بانک پس از عملیات موفق سفارش
      * @var
      */
     protected $bank_receipt;
@@ -73,7 +73,7 @@ class SaderatService
 
     function __construct()
     {
-        // dipricated since we use econea/nusoap
+        // deprecated since we use econea/nusoap
         //include_once(__DIR__ . '/Assets/nusoap.php');
 
 
@@ -134,7 +134,7 @@ class SaderatService
     }
 
     /**
-     * متد تعیید شماره Invoice برای ارسال به بانک
+     * متد تعیین شماره Invoice برای ارسال به بانک
      * تعیین کننده مقدار CRN در مستندات بانک
      *
      * @param $num
@@ -251,8 +251,7 @@ class SaderatService
             $this->bank_receipt,
             $this->invoice_number
         );
-
-        #dd($this);
+        
         // Make proper array of token params
         $params = [
             'SaleConf_req' => [

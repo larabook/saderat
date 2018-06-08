@@ -43,7 +43,7 @@ The bellow siniped code sends request to the bank and gets token then redirects 
     try {
 
       $bank = app('saderat')->make(1000);  // ۱۰۰ تومان
-      $bank->setCallback(url('/path/to/calback/route')); You can also change the callback  
+      $bank->setCallbackUrl(url('/path/to/calback/route')); You can also change the callback  
 
       // در این مرحله شماره سند تولید شده را قبل از ارجاع کاربر به بانک
       // در بانک اطلاعات ذخیره میکنیم
